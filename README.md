@@ -1,3 +1,8 @@
+File with database (in the root): yii2_advanced.sql
+admin login: admin
+admin pass: ASDqwe123
+
+
 Yii 2 Advanced Project Template
 ===============================
 
