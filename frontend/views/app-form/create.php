@@ -6,9 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\AppForm */
 
-$this->title = 'Create App Form';
-$this->params['breadcrumbs'][] = ['label' => 'App Forms', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Оформить заявку';
+
 ?>
 <div class="app-form-create">
 

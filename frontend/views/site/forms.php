@@ -6,7 +6,7 @@ use yii\helpers\Html;
 
 $this->title = 'Формы для заполнения';
 
-if (Yii::$app->session->hasFlash('success', 'New password was saved.')) {
+if (Yii::$app->session->hasFlash('success')) {
     Yii::$app->session->getFlash('success');
 }
 

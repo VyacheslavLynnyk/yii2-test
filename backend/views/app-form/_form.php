@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use dosamigos\datepicker\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\AppForm */
@@ -16,13 +17,21 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'l_name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'birth_date')->textInput() ?>
+    <?php echo $form->field($model, 'birth_date')->widget(
+        DatePicker::className(), [
+            'inline' => false,
+            'clientOptions' => [
+                'autoclose' => true,
+                'format' => 'yyyy-mm-dd'
+            ]
+        ]);
+    ?>
 
     <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'status')->dropDownList([ 'NOT PROCESSED' => 'NOT PROCESSED', 'PROCESSED' => 'PROCESSED', 'CLOSED' => 'CLOSED', ], ['prompt' => '']) ?>
+    <?= $form->field($model, 'status')->dropDownList([ 'PROCESSED' => 'PROCESSED', 'CLOSED' => 'CLOSED', ]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

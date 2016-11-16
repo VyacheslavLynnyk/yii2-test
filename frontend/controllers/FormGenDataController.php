@@ -58,18 +58,22 @@ class FormGenDataController extends Controller
 
         $model->created_at = date('Y-m-d H:i:s');
         $model->field_gen_id = $id;
-
+        $validation = true;
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            $model->save();
-
-            Yii::$app->session->setFlash('success', 'Форма сохранена успешно');
-            return $this->redirect(['site/forms']);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-                'formGen' => $formGen
-            ]);
+            if ($formGen->field_require){
+                $validation = !empty($model->field_data);
+                Yii::$app->session->setFlash('danger', 'нужно заполнить поле');
+            }
+            if ($validation){
+                $model->save();
+                Yii::$app->session->setFlash('success', 'Форма сохранена успешно');
+                return $this->redirect(['site/forms']);
+            }
         }
+        return $this->render('create', [
+            'model' => $model,
+            'formGen' => $formGen
+        ]);
     }
 
     /**

@@ -7,6 +7,7 @@ use yii\helpers\Html;
 /* @var $model app\models\FormGenData */
 
 $this->title = $formGen->form_name;
+
 ?>
 <div class="form-gen-data-create">
 

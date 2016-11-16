@@ -30,8 +30,7 @@ use dosamigos\datepicker\DatePicker;
     <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
-
-    <?php //= $form->field($model, 'status')->dropDownList([ 'NOT PROCESSED' => 'NOT PROCESSED', 'PROCESSED' => 'PROCESSED', 'CLOSED' => 'CLOSED', ], ['prompt' => '']) ?>
+    
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

@@ -9,6 +9,12 @@ use yii\widgets\DetailView;
 $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'App Forms', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
+if (strtolower($model->status) == 'not processed') {
+    $model->status = 'PROCESSED';
+    $model->save();
+}
+
 ?>
 <div class="app-form-view">
 

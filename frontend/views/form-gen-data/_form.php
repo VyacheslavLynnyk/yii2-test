@@ -7,7 +7,10 @@ use dosamigos\datepicker\DatePicker;
 /* @var $this yii\web\View */
 /* @var $model app\models\FormGenData */
 /* @var $form yii\widgets\ActiveForm */
-?>
+
+if (Yii::$app->session->hasFlash('danger')) : ?>
+    <?php Yii::$app->session->getFlash('danger'); ?>
+<?php endif ; ?>
 
 <div class="form-gen-data-form">
 
@@ -22,13 +25,22 @@ use dosamigos\datepicker\DatePicker;
             ]);
             break;
 
-        case 'textarea' : echo $form->field($model, 'field_data')->textarea(['rows' => 6]);
+        case 'textarea' : echo $form->field($model, 'field_data')->textarea([
+                'rows' => 6,
+                'value' => $formGen->field_def,
+                'placeholder' => $formGen->field_place,
+            ]);
             break;
 
-        case 'checkbox' : echo $form->field($model, 'field_data')->checkbox(['rows' => 6]);
+        case 'checkbox' : echo $form->field($model, 'field_data')->checkbox([
+            'value' => $formGen->field_def,
+            'placeholder' => $formGen->field_place,
+        ]);
             break;
 
-        case 'date' : echo $form->field($model, 'field_data')->widget(
+        case 'date' :
+            $model->field_data = $formGen->field_def ?? '';
+            echo $form->field($model, 'field_data')->widget(
             DatePicker::className(), [
             'inline' => false,
             'clientOptions' => [
@@ -40,7 +52,6 @@ use dosamigos\datepicker\DatePicker;
             break;
         case 'option' : echo $form->field($model, 'field_data')->textarea(['rows' => 6]);
             break;
-
 
     }
     

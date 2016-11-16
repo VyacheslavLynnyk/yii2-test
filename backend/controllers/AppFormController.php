@@ -51,6 +51,11 @@ class AppFormController extends Controller
      */
     public function actionView($id)
     {
+
+        $model = $this->findModel($id);
+        if ($model->status == 'NOT PROCESSED') {
+            $model->status = 'PROCESSED';
+        }
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
@@ -84,6 +89,10 @@ class AppFormController extends Controller
     {
         $model = $this->findModel($id);
 
+        if ($model->status == 'NOT PROCESSED') {
+            $model->status = 'PROCESSED';
+        }
+        
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
