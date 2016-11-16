@@ -24,7 +24,7 @@ $this->title = 'My Yii Application';
             <div class="col-lg-6">
                 <h3>Данные пользователей</h3>
                 <p>
-                    <?= Html::a('Смотреть', ['form-gen/index'], ['class' => 'btn btn-success']) ?>
+                    <?= Html::a('Смотреть', ['form-gen-data/index'], ['class' => 'btn btn-success']) ?>
                 </p>
             </div>
         </div>

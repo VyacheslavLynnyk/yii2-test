@@ -58,6 +58,7 @@ class FormGenData extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'field_data' => 'Field Data',
+            'form_name' => 'Form Name',
             'created_at' => 'Created At',
             'field_gen_id' => 'Field Gen ID',
         ];

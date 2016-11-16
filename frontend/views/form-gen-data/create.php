@@ -6,9 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\FormGenData */
 
-$this->title = 'Create Form Gen Data';
-$this->params['breadcrumbs'][] = ['label' => 'Form Gen Datas', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = $formGen->form_name;
 ?>
 <div class="form-gen-data-create">
 

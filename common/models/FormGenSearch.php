@@ -18,7 +18,7 @@ class FormGenSearch extends FormGen
     public function rules()
     {
         return [
-            [['id', 'field_require'], 'integer'],
+            [['id', 'field_require', 'status'], 'integer'],
             [['form_name', 'field_type', 'field_def', 'field_place'], 'safe'],
         ];
     }

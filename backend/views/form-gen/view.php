@@ -34,6 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'field_def',
             'field_place',
             'field_require',
+            'status',
         ],
     ]) ?>
 

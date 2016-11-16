@@ -29,7 +29,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'field_type',
             'field_def',
             'field_place',
-            // 'field_require',
+            'field_require',
+            'status' => [
+                'value' => function ($model) {
+                    return ((int) $model->status === 1) ? 'Active' : 'Passive' ;
+                }
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

@@ -13,17 +13,14 @@ use dosamigos\datepicker\DatePicker;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    
-
-
     <?php
     switch (strtolower($formGen->field_type)) {
-        case 'input' : echo $form->field($model, 'field_data')->textInput([
-            'value' => $formGen->field_def,
-            'placeholder' => $formGen->field_place,
-            'require' => $formGen->field_require,
-        ]);
-                break;
+        case 'input' :
+            echo $form->field($model, 'field_data')->textInput([
+                'value' => $formGen->field_def,
+                'placeholder' => $formGen->field_place,
+            ]);
+            break;
 
         case 'textarea' : echo $form->field($model, 'field_data')->textarea(['rows' => 6]);
             break;

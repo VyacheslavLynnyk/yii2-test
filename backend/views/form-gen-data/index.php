@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'field_data:ntext',
             'created_at',
-            'field_gen_id',
+//            'field_gen_id',
             'form_name' => [
                 'class' => \yii\grid\DataColumn::className(),
                 'format' => 'html',

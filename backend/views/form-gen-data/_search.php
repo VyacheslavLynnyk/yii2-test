@@ -21,7 +21,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'created_at') ?>
 
-    <?= $form->field($model, 'field_gen_id') ?>
+    <?php // $form->field($model, 'field_gen_id') ?>
+
+    <?= $form->field($model, 'form_name') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

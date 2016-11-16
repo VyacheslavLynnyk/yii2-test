@@ -32,10 +32,11 @@ class FormGen extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['form_name', 'field_type'], 'required'],
+            [['form_name', 'field_type', 'status'], 'required'],
             [['field_type'], 'string'],
-            [['field_require'], 'integer'],
+            [['field_require', 'status'], 'integer'],
             [['form_name', 'field_def', 'field_place'], 'string', 'max' => 255],
+            ['status', 'default', 'value'=>'Active'],
         ];
     }
 
@@ -48,9 +49,10 @@ class FormGen extends \yii\db\ActiveRecord
             'id' => 'ID',
             'form_name' => 'Form Name',
             'field_type' => 'Field Type',
-            'field_def' => 'Field Def',
-            'field_place' => 'Field Place',
-            'field_require' => 'Field Require',
+            'field_def' => 'Defult Field',
+            'field_place' => 'Placeholder',
+            'field_require' => 'Required Field',
+            'status' => 'Status',
         ];
     }
 
