@@ -25,9 +25,17 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
+
             'field_data:ntext',
             'created_at',
             'field_gen_id',
+            'form_name' => [
+                'class' => \yii\grid\DataColumn::className(),
+                'format' => 'html',
+                'value' => function ($model, $index, $widget) {
+                    return $model->fieldGen->form_name ;
+                },
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

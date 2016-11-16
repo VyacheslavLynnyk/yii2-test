@@ -18,7 +18,11 @@ use dosamigos\datepicker\DatePicker;
 
     <?php
     switch (strtolower($formGen->field_type)) {
-        case 'input' : echo $form->field($model, 'field_data')->textInput(['rows' => 6]);
+        case 'input' : echo $form->field($model, 'field_data')->textInput([
+            'value' => $formGen->field_def,
+            'placeholder' => $formGen->field_place,
+            'require' => $formGen->field_require,
+        ]);
                 break;
 
         case 'textarea' : echo $form->field($model, 'field_data')->textarea(['rows' => 6]);

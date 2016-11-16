@@ -34,8 +34,10 @@ class FormGenData extends \yii\db\ActiveRecord
         //        $this->id = 1;
         //        echo "<pre>"; print_r($this->getFieldGen()); echo "</pre>";
         //        exit;
+        
+        //'field_data',
         $rulesArray =  [
-            [['field_data', 'field_gen_id'], 'required'],
+            [[ 'field_gen_id'], 'required'],
             [['field_data'], 'string'],
             [['created_at'], 'safe'],
             [['field_gen_id'], 'integer'],
